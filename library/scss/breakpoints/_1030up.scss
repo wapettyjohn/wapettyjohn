@@ -1,0 +1,24 @@
+/******************************************************************
+Site Name: wapettyjohn.com
+Author: Wesley A. Pettyjohn
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+/*********************
+HEADER STYLES
+*********************/
+
+#container {
+     .header {
+	  .sixtyCol {
+	       #menu-main-nav {
+		    font-size: 90%;
+	       }
+	  }
+     } // END: .header
+} // END: #container

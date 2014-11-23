@@ -1,0 +1,98 @@
+/******************************************************************
+Site Name: wapettyjohn.com
+Author:    Wesley A. Pettyjohn
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+     padding: 0;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+#container {
+     margin: 0 auto;
+     max-width: 1440px;
+
+     .header {
+	  padding: 0 0 5.9016994375%;
+
+	  #logo {
+	       text-align: right;
+	  }
+
+	  .sixtyCol {
+	       vertical-align: bottom;
+
+	       #menu-main-nav {
+		    font-size: 65%;
+	       }
+	  }
+     } // END: .header
+} // END: #container
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+/*
+#content {
+     padding-left: 2.95084971875%;
+}
+*/
+
+/*********************
+JOB STYLES
+*********************/
+
+.job {
+     .job-header {
+	  font-size: 100%;
+	  
+	  .job-dates {
+	       font-size: 100%;
+	       text-align: right;
+	  } // END: .job-dates
+     } // END: .job-header
+
+     .job-content {
+	  .projects {
+	       .project {
+		    .project-footer {
+			 .skills {
+			      display: block;
+			 } // END: .skills
+		    } // END: .project-footer
+	       } // END: .project
+	  } // END: .projects
+     } // END: .job-content
+} // END: .job
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+#sidebar {
+     .skills {
+	  display: block;
+     }
+}
+
+/*********************
+FOOTER STYLES
+*********************/

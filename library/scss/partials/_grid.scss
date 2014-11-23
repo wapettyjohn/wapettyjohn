@@ -1,0 +1,63 @@
+/******************************************************************
+Site Name: wapettyjohn.com
+Author:    Wesley A. Pettyjohn
+
+Stylesheet: Grid Stylesheet
+
+This is based on Chris Nager's ungrid: https://github.com/chrisnager/ungrid
+
+******************************************************************/
+.row { 
+    display: table; 
+    table-layout: fixed; 
+    width: 100%; 
+}
+
+/* using a mixin since we can't use placeholder selectors */
+@mixin col {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.col {
+    @include col;
+}
+
+.zeroPadding {
+    padding: 0 !important;
+}
+
+.hundredBlock {
+     display: block !important;
+     width: 100% !important;
+}
+
+/*
+Desktop Grid Styles
+*/
+@media (min-width: 768px) {
+    .hundredCol {
+	@include col;
+	display: block;
+	width: 100%;
+    }
+
+    .thirtyCol {
+	@include col;
+	padding: 0 5.9016994375%;
+	// padding: 0 2em;
+	width: 38.196601125%;
+    }
+
+    .fiftyCol {
+	@include col;
+	width: 50%;
+    }
+    
+    .sixtyCol {
+	@include col;
+	padding: 0 5.9016994375%;
+	// padding: 0 2em;
+	width: 61.803398875%;
+    }
+} // end desktop styles
