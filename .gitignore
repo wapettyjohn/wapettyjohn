@@ -56,3 +56,9 @@ temp/
 
 *.codekit
 *.scssc
+
+##########
+Media
+##########
+
+*.png
