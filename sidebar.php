@@ -1,6 +1,13 @@
 <aside id="sidebar" class="sidebar thirtyCol" role="complementary">
      <?php 
+     function count_sort( $a,$b ) {
+	  if ($a->count === $b->count ) return 0;
+	  return ( $a->count > $b->count ) ? -1 : 1;
+     }
+
      $skills = get_terms( 'skill' );
+     usort( $skills, "count_sort" );
+
      if ( $skills && ! is_wp_error( $skills ) ) :
      
      ?>

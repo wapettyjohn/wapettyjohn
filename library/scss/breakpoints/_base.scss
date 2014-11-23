@@ -262,9 +262,10 @@ SIDEBARS & ASIDES
 	  display: none;
 	  font-size: 0.42em;
 	  margin: 0;
+	  text-align: right;
 
 	  .skill {
-	       float: right;
+	       display: inline-block;
 	       line-height: 1;
 	       margin: 0.25em;
 
