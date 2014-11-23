@@ -102,6 +102,122 @@ function loadGravatars() {
 } // end function
 
 function scaleTagCloud() {
+<<<<<<< HEAD
+    var maxWidth = 382;
+    var $jobTags = jQuery( '#sidebar > .skills' );
+    var $jobTagsWidth = $jobTags.width();
+    
+    if ( $jobTagsWidth < maxWidth ) {
+	var $fontSize = ( $jobTagsWidth / maxWidth ) * 42;
+	$jobTags.css( 'font-size', $fontSize + '%' );
+    }
+    else {
+	$jobTags.css( 'font-size', '0.42em' );
+    }
+    
+    maxWidth = $jobTags = $jobTagsWidth = null;
+}
+
+/* .view-all handling */ 
+jQuery( '.view-all' ).click(
+    function( event ) {
+	event.preventDefault();
+	jQuery( '.job' ).show();
+	jQuery( '.skill > a' ).css( 'color', '#8fa68e' );
+	jQuery( '.project-content, .project-footer' ).slideUp();
+	jQuery( '.arrow' ).html( '&#9662;' );
+	jQuery( this ).fadeOut( 200 );
+
+	var $header = jQuery( '#container > .header' );
+	jQuery( 'body' ).animate({
+	    scrollTop: ( $header.outerHeight() + parseFloat( $header.css( 'padding-bottom' ) ) )
+	});
+    }
+);
+
+
+/* Tag cloud filter */
+function initTagCloudFilter( initialColor, selectedColor ) {
+    jQuery( '.skill > a' ).click(
+	function( event ) {
+	    event.preventDefault();
+
+	    var $clickedSkill = jQuery( this );
+	    var clickedSkillText = jQuery.trim( $clickedSkill.text() );
+	    var $jobs = jQuery( '.job' );
+	    var $viewAll = jQuery( '.view-all' );
+	    
+	    if ( $viewAll.css( 'display' ) === 'none' ) {
+		$viewAll.fadeIn( 200 );
+	    }
+
+	    jQuery( '.project-content, .project-footer' ).slideUp();
+	    jQuery( '.arrow' ).html( '&#9662;' );
+	    jQuery( '.skill > a' ).css( 'color', initialColor );
+	    $clickedSkill.css( 'color', selectedColor );
+	    $jobs.show();
+
+	    $jobs.each(
+		function() {
+		    var $job = jQuery( this );
+		    var skills = [];
+
+		    $job.find( '.skill' ).each(
+			function() {
+			    var $skillAnchor = jQuery( this ).find( '> a' );
+			    var skillText = jQuery.trim( $skillAnchor.text() );
+
+			    if ( skillText === clickedSkillText ) {
+				var $projectFooter = $skillAnchor.parent().parent().parent();
+				var $projectContent = $projectFooter.prev();
+			
+				$projectContent.slideDown();
+				$projectFooter.slideDown();
+				$skillAnchor.css( 'color', selectedColor );
+				$projectContent.prev().find( '.arrow' ).html( '&#9656;' );
+			    
+				$projectFooter = $projectContent = null;
+			    }
+
+			    skills.push( skillText );
+			    
+			    $skillAnchor = null;
+			}
+		    ).promise().done(  
+			function() {
+			    var $header = jQuery( '#container > .header' );
+			    
+			    jQuery( 'body' ).animate( {
+				scrollTop: ( $header.outerHeight() + parseFloat( $header.css( 'padding-bottom' ) ) )
+			    } );
+
+			    $header = null;
+			}
+		    );
+		    
+		    if ( skills.indexOf( clickedSkillText ) === -1 ) {
+			$job.hide();
+		    }
+
+		    $job = skills = null;
+		}
+	    );
+
+	    $clickedTag = $viewAll = $jobs = null;
+	}
+    );
+}
+
+// Function to slabtext the logo
+function slabTextHeadlines() {
+    jQuery( '#logo' ).slabText();
+};
+
+/*
+ * Put all your regular jQuery in here.
+*/
+jQuery( document ).ready( function( $ ) {
+=======
     var $maxWidth = 383;
     var $jobTags = jQuery( '#sidebar > .job-tags' );
     var $jobTagsWidth = $jobTags.width();
@@ -119,11 +235,51 @@ function scaleTagCloud() {
 */
 jQuery(document).ready(function($) {
 
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
     /*
      * Let's fire off the gravatar function
      * You can remove this if you don't need it
      */
     loadGravatars();
+<<<<<<< HEAD
+
+    jQuery( window ).scroll( 
+	function() {
+	    var offset = jQuery( window ).scrollTop();
+	    var headerOuterHeight = jQuery( '#container > .header' ).outerHeight();
+	    var $sidebar = jQuery( '#sidebar' );
+
+	    if ( offset >= headerOuterHeight ) {
+		$sidebar.css( 'position','relative' ).css( 'top', ( offset - headerOuterHeight ) );
+	    }
+
+	    else {
+		$sidebar.css( 'position', 'static' );
+	    }
+
+	    $sidebar = null;
+	}
+    );
+    
+    /* Initialize tag cloud */
+    jQuery( '#sidebar .skill > a' ).each(
+	function() {
+	    var $tagAnchor = jQuery( this ); 
+
+	    $tagAnchor.css( 'font-size', $tagAnchor.attr( 'count' ) + 'em' );
+
+	    // setting min font-size 
+	    if ( parseInt( $tagAnchor.css( 'font-size' ) ) < 16 ) {
+		$tagAnchor.css( 'font-size', '16px'  );
+	    }
+
+	    $tagAnchor = null;
+	}
+    );
+
+    /* Initialize tag cloud filter */
+    initTagCloudFilter( '#8fa68e', '#586657' );
+=======
     
     /* Tag cloud */
     jQuery( '#sidebar .job-tag > a' ).each(
@@ -132,10 +288,49 @@ jQuery(document).ready(function($) {
 	    jQuery( this ).css( 'font-size', $count + 'em' );
 	}
     );
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
     
     /* TODO: add matchMedia */
     scaleTagCloud();
     
+<<<<<<< HEAD
+    jQuery( window ).resize(
+	function() {
+	    scaleTagCloud();
+	}
+    );
+
+    /* Project hide/show */
+    jQuery( '.project-name' ).click(
+	function() {
+	    var $projectName = jQuery( this );
+	    var $arrow = $projectName.find( '> .arrow' );
+	    var $projectContent = $projectName.parent().next();
+	    var $projectFooter = $projectContent.next();
+
+	    jQuery( '.project-content, .project-footer' ).slideUp();
+	    jQuery( '.project-name > .arrow' ).html( '&#9662;' );
+
+	    if ( $projectContent.css( 'display' ) === 'none' ) {
+		$projectContent.slideDown();
+		$projectFooter.slideDown();
+		$arrow.html( '&#9656;' );
+	    }
+	    else {
+		$projectContent.slideUp();
+		$projectFooter.slideUp();
+		$arrow.html( '&#9662;' );
+	    }
+
+	    $projectName = $arrow = $projectContent = null;
+	}
+    );		
+} ); /* end of as page load scripts */
+
+jQuery( window ).load(
+    function() {
+	slabTextHeadlines();
+=======
     /* Project hide/show */
     jQuery( '.project-name' ).click(
 	function() {
@@ -154,5 +349,6 @@ jQuery(document).ready(function($) {
 jQuery( window ).resize(
     function() {
 	scaleTagCloud();
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
     }
 );

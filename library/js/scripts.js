@@ -117,12 +117,48 @@ function scaleTagCloud() {
     maxWidth = $jobTags = $jobTagsWidth = null;
 }
 
+<<<<<<< HEAD
+/* .view-all handling */ 
+jQuery( '.view-all' ).click(
+    function( event ) {
+	event.preventDefault();
+	jQuery( '.job' ).show();
+	jQuery( '.skill > a' ).css( 'color', '#8fa68e' );
+	jQuery( '.project-content, .project-footer' ).slideUp();
+	jQuery( '.arrow' ).html( '&#9662;' );
+	jQuery( this ).fadeOut( 200 );
+
+	var $header = jQuery( '#container > .header' );
+	jQuery( 'body' ).animate({
+	    scrollTop: ( $header.outerHeight() + parseFloat( $header.css( 'padding-bottom' ) ) )
+	});
+    }
+);
+
+=======
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
 
 /* Tag cloud filter */
 function initTagCloudFilter( initialColor, selectedColor ) {
     jQuery( '.skill > a' ).click(
 	function( event ) {
 	    event.preventDefault();
+<<<<<<< HEAD
+
+	    var $clickedSkill = jQuery( this );
+	    var clickedSkillText = jQuery.trim( $clickedSkill.text() );
+	    var $jobs = jQuery( '.job' );
+	    var $viewAll = jQuery( '.view-all' );
+	    
+	    if ( $viewAll.css( 'display' ) === 'none' ) {
+		$viewAll.fadeIn( 200 );
+	    }
+
+	    jQuery( '.project-content, .project-footer' ).slideUp();
+	    jQuery( '.arrow' ).html( '&#9662;' );
+	    jQuery( '.skill > a' ).css( 'color', initialColor );
+	    $clickedSkill.css( 'color', selectedColor );
+=======
 	    
 	    var $clickedTag = jQuery( this );
 	    var clickedTagText = jQuery.trim( $clickedTag.text() );
@@ -130,11 +166,58 @@ function initTagCloudFilter( initialColor, selectedColor ) {
 
 	    jQuery( '.skill > a' ).css( 'color', initialColor );
 	    $clickedTag.css( 'color', selectedColor );
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
 	    $jobs.show();
 
 	    $jobs.each(
 		function() {
 		    var $job = jQuery( this );
+<<<<<<< HEAD
+		    var skills = [];
+
+		    $job.find( '.skill' ).each(
+			function() {
+			    var $skillAnchor = jQuery( this ).find( '> a' );
+			    var skillText = jQuery.trim( $skillAnchor.text() );
+
+			    if ( skillText === clickedSkillText ) {
+				var $projectFooter = $skillAnchor.parent().parent().parent();
+				var $projectContent = $projectFooter.prev();
+			
+				$projectContent.slideDown();
+				$projectFooter.slideDown();
+				$skillAnchor.css( 'color', selectedColor );
+				$projectContent.prev().find( '.arrow' ).html( '&#9656;' );
+			    
+				$projectFooter = $projectContent = null;
+			    }
+
+			    skills.push( skillText );
+			    
+			    $skillAnchor = null;
+			}
+		    ).promise().done(  
+			function() {
+			    var $header = jQuery( '#container > .header' );
+			    
+			    jQuery( 'body' ).animate( {
+				scrollTop: ( $header.outerHeight() + parseFloat( $header.css( 'padding-bottom' ) ) )
+			    } );
+
+			    $header = null;
+			}
+		    );
+		    
+		    if ( skills.indexOf( clickedSkillText ) === -1 ) {
+			$job.hide();
+		    }
+
+		    $job = skills = null;
+		}
+	    );
+
+	    $clickedTag = $viewAll = $jobs = null;
+=======
 		    var tags = [];
 
 		    $job.find( '.skill' ).each(
@@ -161,6 +244,7 @@ function initTagCloudFilter( initialColor, selectedColor ) {
 	    );
 	    
 	    $clickedTag = clickedTagText = $jobs = null;
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
 	}
     );
 }
@@ -179,6 +263,27 @@ jQuery( document ).ready( function( $ ) {
      * You can remove this if you don't need it
      */
     loadGravatars();
+<<<<<<< HEAD
+
+    jQuery( window ).scroll( 
+	function() {
+	    var offset = jQuery( window ).scrollTop();
+	    var headerOuterHeight = jQuery( '#container > .header' ).outerHeight();
+	    var $sidebar = jQuery( '#sidebar' );
+
+	    if ( offset >= headerOuterHeight ) {
+		$sidebar.css( 'position','relative' ).css( 'top', ( offset - headerOuterHeight ) );
+	    }
+
+	    else {
+		$sidebar.css( 'position', 'static' );
+	    }
+
+	    $sidebar = null;
+	}
+    );
+=======
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
     
     /* Initialize tag cloud */
     jQuery( '#sidebar .skill > a' ).each(
@@ -187,6 +292,10 @@ jQuery( document ).ready( function( $ ) {
 
 	    $tagAnchor.css( 'font-size', $tagAnchor.attr( 'count' ) + 'em' );
 
+<<<<<<< HEAD
+	    // setting min font-size 
+=======
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
 	    if ( parseInt( $tagAnchor.css( 'font-size' ) ) < 16 ) {
 		$tagAnchor.css( 'font-size', '16px'  );
 	    }
@@ -231,7 +340,11 @@ jQuery( document ).ready( function( $ ) {
 
 	    $projectName = $arrow = $projectContent = null;
 	}
+<<<<<<< HEAD
+    );	
+=======
     );		
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
 } ); /* end of as page load scripts */
 
 jQuery( window ).load(
