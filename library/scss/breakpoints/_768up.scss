@@ -31,16 +31,20 @@ HEADER STYLES
 
      .header {
 	  padding: 0 0 5.9016994375%;
-
-	  #logo {
-	       text-align: right;
-	  }
-
-	  .sixtyCol {
-	       vertical-align: bottom;
-
-	       #menu-main-nav {
-		    font-size: 65%;
+	  
+	  #inner-header {
+	       padding-right: 2.95084971875%;
+	       
+	       #logo {
+		    text-align: right;
+	       }
+	       
+	       .sixtyCol {
+		    vertical-align: bottom;
+		    
+		    #menu-main-nav {
+			 font-size: 65%;
+		    }
 	       }
 	  }
      } // END: .header
@@ -50,11 +54,14 @@ HEADER STYLES
 POSTS & CONTENT STYLES
 *********************/
 
-/*
-#content {
+#sidebar {
+     padding-right: 2.95084971875%;
+}
+
+#main {
      padding-left: 2.95084971875%;
 }
-*/
+
 
 /*********************
 JOB STYLES
