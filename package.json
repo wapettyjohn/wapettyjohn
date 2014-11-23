@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "wapettyjohn",
   "version": "0.0.1",
   "description": "Personal website.",
@@ -19,4 +20,14 @@
   },
   "author": "",
   "license": "BSD-2-Clause"
+=======
+    "name": "wapettyjohn",
+    "version": "0.0.1",
+    "description": "Personal website.",
+    "devDependencies": {
+	"grunt": "~0.4.5",
+	"grunt-contrib-compass": "~1.0.1",
+	"grunt-contrib-watch": "~0.6.1"
+    }
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
 }

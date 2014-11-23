@@ -102,6 +102,7 @@ function loadGravatars() {
 } // end function
 
 function scaleTagCloud() {
+<<<<<<< HEAD
     var maxWidth = 382;
     var $jobTags = jQuery( '#sidebar > .skills' );
     var $jobTagsWidth = $jobTags.width();
@@ -216,11 +217,31 @@ function slabTextHeadlines() {
  * Put all your regular jQuery in here.
 */
 jQuery( document ).ready( function( $ ) {
+=======
+    var $maxWidth = 383;
+    var $jobTags = jQuery( '#sidebar > .job-tags' );
+    var $jobTagsWidth = $jobTags.width();
+    if ( $jobTagsWidth < $maxWidth ) {
+	var $fontSize = ( $jobTagsWidth / $maxWidth ) * 100;
+	$jobTags.css( 'font-size', $fontSize + '%' );
+    }
+    else {
+	$jobTags.css( 'font-size', 'initial' );
+    }
+}
+
+/*
+ * Put all your regular jQuery in here.
+*/
+jQuery(document).ready(function($) {
+
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
     /*
      * Let's fire off the gravatar function
      * You can remove this if you don't need it
      */
     loadGravatars();
+<<<<<<< HEAD
 
     jQuery( window ).scroll( 
 	function() {
@@ -258,10 +279,21 @@ jQuery( document ).ready( function( $ ) {
 
     /* Initialize tag cloud filter */
     initTagCloudFilter( '#8fa68e', '#586657' );
+=======
+    
+    /* Tag cloud */
+    jQuery( '#sidebar .job-tag > a' ).each(
+	function() {
+	    $count = jQuery( this ).attr( 'count' );
+	    jQuery( this ).css( 'font-size', $count + 'em' );
+	}
+    );
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
     
     /* TODO: add matchMedia */
     scaleTagCloud();
     
+<<<<<<< HEAD
     jQuery( window ).resize(
 	function() {
 	    scaleTagCloud();
@@ -298,5 +330,25 @@ jQuery( document ).ready( function( $ ) {
 jQuery( window ).load(
     function() {
 	slabTextHeadlines();
+=======
+    /* Project hide/show */
+    jQuery( '.project-name' ).click(
+	function() {
+	    var $projectContent = jQuery( this ).parent().next();
+	    
+	    if ( $projectContent.css( 'display' ) === 'none' ) {
+		$projectContent.slideDown();
+	    }
+	    else {
+		$projectContent.slideUp();
+	    }
+	}
+    );		
+}); /* end of as page load scripts */
+
+jQuery( window ).resize(
+    function() {
+	scaleTagCloud();
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
     }
 );

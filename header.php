@@ -37,6 +37,7 @@
 	  <?php // drop Google Analytics Here ?>
 	  <?php // end analytics ?>
 
+<<<<<<< HEAD
 	  <style>
 	  a.view-all {
 	      color: #FF3D2E;
@@ -53,6 +54,8 @@
 	  }
 	  </style>
 
+=======
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
 	  <!-- Including slabText -->
 	  <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/library/css/libs/slabtext.css" />
 	  <script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery.slabtext.min.js" type="text/javascript"></script>
@@ -63,10 +66,17 @@
 	       <header class="header row" role="banner">
 		    <div id="inner-header" class="thirtyCol">
 			 <h1 id="logo">
+<<<<<<< HEAD
 			      <!-- <a href="<?php echo home_url(); ?>" rel="nofollow"> -->
 				   <span class="slabtext">Wesley A.</span>
 				   <span class="slabtext">Pettyjohn</span>
 			      <!-- </a> -->
+=======
+			      <a href="<?php echo home_url(); ?>" rel="nofollow">
+				   <span class="slabtext">Wesley A.</span>
+				   <span class="slabtext">Pettyjohn</span>
+			      </a>
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
 			 </h1>
 
 			 <?php // if you'd like to use the site description you can un-comment it below ?>
@@ -89,6 +99,9 @@
     					 'fallback_cb' => ''                             // fallback function (if there is one)
 				    ) ); ?>
 			 </nav>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
 		    </div>
 	       </header>

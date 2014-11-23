@@ -52,7 +52,22 @@ temp/
 ._*
 .Trashes
 
+*~
+
 .svn
 
 *.codekit
 *.scssc
+
+##########
+Media
+##########
+
+*.png
+*.ico
+
+##########
+Dirs
+##########
+
+fonts/

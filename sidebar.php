@@ -13,6 +13,9 @@
 		    </li>
 	       <?php endforeach; ?>
 	  </ul> <!-- / .skills -->
+<<<<<<< HEAD
 	  <a href="#" class="view-all">View all&ensp;<span>&#10548;</span></a>
+=======
+>>>>>>> 77248ddeca2a06bcb9bfad12e8cf263b7d7c3854
      <?php endif; ?>
 </aside>
