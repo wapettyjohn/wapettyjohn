@@ -1,0 +1,280 @@
+/******************************************************************
+Site Name: wapettyjohn.com
+Author:    Wesley A. Pettyjohn
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+     background-color: #332f29;
+     color: $text-color;
+     font-family: $sans-serif;
+     font-size: 100%;
+     -webkit-font-smoothing: antialiased;
+     line-height: 1.5;
+     overflow: scroll;
+     padding: 0 5.9016994375%;
+}
+
+article {
+     padding-bottom: 1.61803399%;
+}
+
+p {
+     color: $text-color;
+     font-size: 1em;
+     line-height: 1.61803399em;
+     margin: 0;
+     padding-bottom: 1.61803399%;
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+     color: $link-color;
+     text-decoration: none;
+     
+     /* on hover */
+     &:hover, &:focus {
+	  color: $link-hover;
+     }
+     
+     /* on click */
+     &:active {
+	  
+     }
+     
+     /* mobile tap color */
+     &:link {
+	  /*
+	    this highlights links on iPhones/iPads.
+	    so it basically works like the :hover selector
+	    for mobile devices.
+	    */
+	  -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+     }
+}
+
+/******************************************************************
+TEXT STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+     color: $heading-color;
+     font-weight: 500;
+     line-height: 1.61803399em;
+     margin: 0;
+     text-rendering: optimizelegibility;
+     
+     
+     /* removing text decoration from all headline links */
+     a {
+	  text-decoration: none;
+     }
+}
+
+h1, .h1 {
+     font-size: 4.236em;
+
+     > a {
+	  color: $heading-color !important;
+     }
+}
+
+h2, .h2 {
+     color: #FF3D2E;
+     font-size: 2.618em;
+     line-height: 1;
+}
+
+h3, .h3 {
+     font-size: 1.618em;
+}
+
+h4, .h4 {
+     font-size: 1em;
+     font-weight: 700;
+}
+
+h5, .h5 {
+     font-size: 0.618em;
+     font-weight: 700;
+     text-transform: uppercase;
+}
+
+h6, .h6 {
+     font-size: 0.382em;
+     font-weight: 700;
+     text-transform: uppercase;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+#container {
+      padding-top: 5.9016994375%;
+
+     .header {
+	  #logo {
+	       line-height: 1em;
+	       text-transform: uppercase;
+	  }
+	  
+	  .sixtyCol {
+	       vertical-align: bottom;
+
+	       #menu-main-nav {
+		    float: left;
+		    font-size: 50%;
+		    margin: 0;
+		    
+		    .menu-item {
+			 display: block;
+			 float: left;
+			 font-family: "Gotham Bold";
+			 font-size: 3em;
+			 line-height: 1;
+			 margin-right: 0.5em;
+			 
+			 &.icon-behance,
+			 &.icon-linkedin {
+			      color: $link-color;
+			      font-size: 3.5em;
+			      font-family: "icomoon";
+			      position: relative;
+
+			      &.icon-behance {
+				   line-height: .94;
+			      }
+
+			      &.icon-linkedin {
+				   font-size: 2.6em;
+				   line-height: 1.1;
+			      }
+
+			      &:hover {
+				   color: $link-hover;
+			      }
+			      
+			      a {
+				   position: absolute;
+				   top: 0;
+				   right: 0;
+				   width: 100%;
+			      }
+			 }
+
+			 a {
+			      text-transform: uppercase;
+			 }
+		    }
+	       }
+	  }
+     } // END: .header
+} // END: #container
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+/*********************
+JOB STYLES
+*********************/
+
+.job {     
+     .job-header {
+	  font-size: 80%;
+
+	  .job-dates {
+	       font-size: 120%;
+	       text-align: left;
+	  } // END: .job-dates
+     } // END: .job-header
+     
+     .job-content {
+	  .projects {
+	       .project {
+		    .project-header {
+			 .project-name {
+			      cursor: pointer;
+
+			      .arrow {
+				   padding-left: 0.5em
+			      }
+			 } // END: .project-name
+		    } // END: .project-header
+		    
+		    .project-content {
+			 display: none;
+
+			 .project-highlights {
+			      border-left: solid 1px $white;
+			      margin: 1.61803399em 0;
+
+			      .project-highlight {
+				   padding: 0 1.61803399em 1.61803399em;
+				   
+				   &:last-child {
+					padding-bottom: 0;
+				   }
+			      } // END: .project-highlight
+			 } // END: .project-highlights
+		    } // END: .project-content
+
+		    .project-footer {
+			 display: none;
+
+			 .skills {
+			      display: none;
+			      // padding: 0 1.61803399em;
+
+			      .skill {
+				   display: inline;
+			      }
+			 } // END: .skills
+		    } // END: .project-footer
+	       } // END: .project
+	  } // END: .projects
+     } // END: .job-content
+} // END: .job
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+#sidebar {
+     // padding: 5.9016994375% 0;
+
+     .skills {
+	  display: none;
+	  font-size: 0.42em;
+	  margin: 0;
+
+	  .skill {
+	       float: right;
+	       line-height: 1;
+	       
+	       a {
+		    margin-right: 0.125em;
+		    text-decoration: none;
+	       }
+	  } // END: .skill
+     } // END: .skills
+} // END: #sidebar
+
+/*********************
+FOOTER STYLES
+*********************/

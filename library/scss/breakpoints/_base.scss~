@@ -1,0 +1,187 @@
+/******************************************************************
+Site Name: wapettyjohn.com
+Author:    Wesley A. Pettyjohn
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+    background-color: $white;
+    color: $text-color;
+    font-family: $lato;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    
+}
+
+article {
+    padding-bottom: 1.61803399%;
+}
+
+p {
+    color: $text-color;
+    font-size: 1em;
+    line-height: 1.61803399em;
+    margin: 0;
+    padding-bottom: 1.61803399%;
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+    color: $link-color;
+    
+    /* on hover */
+    &:hover, &:focus {
+	color: $link-hover;
+    }
+    
+    /* on click */
+    &:active {
+	
+    }
+    
+    /* mobile tap color */
+    &:link {
+	/*
+	  this highlights links on iPhones/iPads.
+	  so it basically works like the :hover selector
+	  for mobile devices.
+	  */
+	-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+    }
+}
+
+/******************************************************************
+TEXT STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+    color: $heading-color;
+    font-weight: 500;
+    line-height: 1.61803399em;
+    margin: 0;
+    text-rendering: optimizelegibility;
+    
+    
+    /* removing text decoration from all headline links */
+    a {
+	text-decoration: none;
+    }
+}
+
+h1, .h1 {
+    font-size: 4.236em;
+
+    > a {
+	color: $heading-color !important;
+    }
+}
+
+h2, .h2 {
+    font-size: 2.618em;
+}
+
+h3, .h3 {
+    font-size: 1.618em;
+}
+
+h4, .h4 {
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h5, .h5 {
+    font-size: 0.618em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h6, .h6 {
+    font-size: 0.382em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+#container {
+    .header {
+	#inner-header {
+	    #logo {
+		line-height: 1em;
+		text-transform: uppercase;
+	    }
+	} // END: #inner-header
+    } // END: .header
+} // END: #container
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+/*********************
+JOB STYLES
+*********************/
+
+.job {
+    .job-header {
+	.job-title {
+	    
+	} // END: .job-title
+	
+	.employer {
+	    
+	} // END: .employer
+	
+	.job-dates {
+	    text-align: right;
+	} // END: .job-dates
+    } // END: .job-header
+    
+    .job-content {
+	.job-description {
+	    
+	} // END: .job-description
+	
+	.projects {
+	    .project {
+		.project-header {
+		    .project-name {
+			
+		    } // END: .project-name
+		} // END: .project-header
+		
+		.project-content {
+		    .project-description {
+			
+		    } // END: .project-description
+		} // END: .project-content
+	    } // END: .project
+	} // END: .projects
+    } // END: .job-content
+} // END: .job
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+/*********************
+FOOTER STYLES
+*********************/
