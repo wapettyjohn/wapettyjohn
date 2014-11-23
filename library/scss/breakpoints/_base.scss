@@ -27,7 +27,7 @@ body {
 }
 
 article {
-     padding-bottom: 1.61803399%;
+     margin-bottom: 1.61803399%;
 }
 
 p {
@@ -35,7 +35,7 @@ p {
      font-size: 1em;
      line-height: 1.61803399em;
      margin: 0;
-     padding-bottom: 1.61803399%;
+     margin-bottom: 1.61803399%;
 }
 
 /*********************
@@ -76,6 +76,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
      font-weight: 500;
      line-height: 1.61803399em;
      margin: 0;
+     margin-bottom: 1.61803399%;
      text-rendering: optimizelegibility;
      
      
@@ -87,6 +88,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 h1, .h1 {
      font-size: 4.236em;
+     margin-bottom: 0;
 
      > a {
 	  color: $heading-color !important;
@@ -125,9 +127,9 @@ HEADER STYLES
 *********************/
 
 #container {
-      padding-top: 5.9016994375%;
-
      .header {
+	  padding: 5.9016994375% 0;
+
 	  #logo {
 	       line-height: 1em;
 	       text-transform: uppercase;
@@ -268,6 +270,10 @@ SIDEBARS & ASIDES
 	       display: inline-block;
 	       line-height: 1;
 	       padding: 1.61803399%;
+
+	       &:first-child {
+		    padding-top: 0;
+	       }
 
 	       a {
 		    text-decoration: none;
